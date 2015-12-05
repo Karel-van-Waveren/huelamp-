@@ -27,8 +27,35 @@
         </DataTemplate>
     </Page.Resources>
 
+    <SplitView Name="SplitView">
+        <SplitView.Pane>
+            <ListView ItemsSource="{x:Bind huelampen}" ItemTemplate="{StaticResource textTemplate}">
 
-    <ListView ItemsSource="{x:Bind huelampen}" ItemTemplate="{StaticResource textTemplate}">
-
-    </ListView>
+            </ListView>
+        </SplitView.Pane>
+        <SplitView.Content>
+            <StackPanel>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="Ip"/>
+                    <TextBox Name="Ip" Grid.Column="1"/>
+                    <TextBlock Text="Port" Grid.Row="1"/>
+                    <TextBox Name="Port" Grid.Column="1" Grid.Row="1"/>
+                    <TextBlock Text="Username" Grid.Row="2"/>
+                    <TextBox Name="Username" Grid.Column="1" Grid.Row="2"/>
+                    <Button Grid.Row="3" Content="Start" Click="Button_Click"/>
+                </Grid>
+            </StackPanel>
+        </SplitView.Content>
+    </SplitView>
+    
 </Page>

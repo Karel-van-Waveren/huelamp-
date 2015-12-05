@@ -64,5 +64,11 @@ namespace Huelamp
             port = tempPort;
             username = tempUsername;
         }
-}
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            SetSettings(Ip.Text, Convert.ToInt32(Port.Text), Username.Text);
+            SplitView.IsPaneOpen = !SplitView.IsPaneOpen;
+        }
+    }
 }
