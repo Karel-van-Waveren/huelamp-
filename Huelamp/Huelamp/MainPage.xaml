@@ -8,6 +8,19 @@
     xmlns:data="using:Huelamp.Models"
     mc:Ignorable="d">
 
+    <Page.BottomAppBar>
+        <CommandBar>
+            <CommandBar.SecondaryCommands>
+                <AppBarButton Label="Settings" Click="AppBarButton_Click">
+                    <AppBarButton.Icon>
+                        <BitmapIcon UriSource="/Assets/appbar.rss.png" />
+                    </AppBarButton.Icon>
+                </AppBarButton>
+                <AppBarButton Icon="Globe" Label="lamps" Click="AppBarButton_Click_1"/>
+            </CommandBar.SecondaryCommands>
+        </CommandBar>
+    </Page.BottomAppBar>
+
     <Page.Resources>
         <DataTemplate x:DataType="data:Huelampwaardes" x:Key="textTemplate">
             <StackPanel Tapped="Infolamp_Tapped">
@@ -29,12 +42,12 @@
 
     <SplitView Name="SplitView">
         <SplitView.Pane>
-            <ListView ItemsSource="{x:Bind huelampen}" ItemTemplate="{StaticResource textTemplate}">
+            <ListView ItemsSource="{x:Bind huelampen}" ItemTemplate="{StaticResource textTemplate}" Visibility="Visible" Name="Lamps">
 
             </ListView>
         </SplitView.Pane>
         <SplitView.Content>
-            <StackPanel>
+            <StackPanel Name="Settings" Visibility="Visible">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>

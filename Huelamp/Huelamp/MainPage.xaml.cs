@@ -69,6 +69,23 @@ namespace Huelamp
         {
             SetSettings(Ip.Text, Convert.ToInt32(Port.Text), Username.Text);
             SplitView.IsPaneOpen = !SplitView.IsPaneOpen;
+            Settings.Visibility = Visibility.Collapsed;
+        }
+
+        private void AppBarButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (Settings.Visibility == Visibility.Visible)
+                Settings.Visibility = Visibility.Collapsed;
+            else
+                Settings.Visibility = Visibility.Visible;
+        }
+
+        private void AppBarButton_Click_1(object sender, RoutedEventArgs e)
+        {
+            if (Lamps.Visibility == Visibility.Visible)
+                Lamps.Visibility = Visibility.Collapsed;
+            else
+                Lamps.Visibility = Visibility.Visible;
         }
     }
 }
