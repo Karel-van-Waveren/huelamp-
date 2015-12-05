@@ -27,14 +27,26 @@
                 <Rectangle Height="50" Width="50" Fill="Red" Margin="0,5,0,5"/>
                 <TextBlock Text="{x:Bind naam}"/>
                 <StackPanel Visibility="Visible">
-                    <TextBlock Text="On" Margin="0,15,0,0"/>
-                    <ToggleSwitch IsOn="{x:Bind on}"/>
-                    <TextBlock Text="Hue" Margin="0,15,0,0"/>
-                    <Slider Maximum="65555" Value="{x:Bind hue}"/>
-                    <TextBlock Text="Saturation" Margin="0,15,0,0"/>
-                    <Slider Maximum="255" Value="{x:Bind saturation}"/>
-                    <TextBlock Text="Brightness" Margin="0,15,0,0"/>
-                    <Slider Maximum="255" Value="{x:Bind brightness}"/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="On" Margin="0,15,0,0"/>
+                        <ToggleSwitch IsOn="{x:Bind on}" Grid.Column="1"/>
+                        <TextBlock Text="Hue" Margin="0,15,0,0" Grid.Row="1"/>
+                        <Slider Maximum="65555" Value="{x:Bind hue}" Grid.Row="1" Grid.Column="1"/>
+                        <TextBlock Text="Saturation" Margin="0,15,0,0" Grid.Row="2"/>
+                        <Slider Maximum="255" Value="{x:Bind saturation}" Grid.Row="2" Grid.Column="1"/>
+                        <TextBlock Text="Brightness" Margin="0,15,0,0" Grid.Row="3"/>
+                        <Slider Maximum="255" Value="{x:Bind brightness}" Grid.Row="3" Grid.Column="1"/>
+                    </Grid>
                 </StackPanel>
             </StackPanel>
         </DataTemplate>
