@@ -46,5 +46,23 @@ namespace Huelamp
             MainPage.LOCAL_SETTINGS.Values["port"] = port;
             MainPage.LOCAL_SETTINGS.Values["user"] = username;
         }
+
+        public static void RetrieveSettings(out string ip, out int port, out string username)
+        {
+            string tempIP = MainPage.LOCAL_SETTINGS.Values["ip"] as string;
+            int tempPort = Convert.ToInt32(MainPage.LOCAL_SETTINGS.Values["port"]);
+            string tempUsername = MainPage.LOCAL_SETTINGS.Values["user"] as string;
+
+            if (string.IsNullOrEmpty(tempIP))
+                tempIP = "localhost";
+            if (tempPort == 0)
+                tempPort = 8000;
+            if (string.IsNullOrEmpty(tempUsername))
+                tempUsername = "MenK Hue";
+
+            ip = tempIP;
+            port = tempPort;
+            username = tempUsername;
+        }
 }
 }
