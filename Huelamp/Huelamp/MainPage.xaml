@@ -60,11 +60,11 @@
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
                     <TextBlock Text="Ip"/>
-                    <TextBox Name="Ip" Grid.Column="1"/>
+                    <TextBox Name="IpBox" Grid.Column="1"/>
                     <TextBlock Text="Port" Grid.Row="1"/>
-                    <TextBox Name="Port" Grid.Column="1" Grid.Row="1"/>
+                    <TextBox Name="PortBox" Grid.Column="1" Grid.Row="1"/>
                     <TextBlock Text="Username" Grid.Row="2"/>
-                    <TextBox Name="Username" Grid.Column="1" Grid.Row="2"/>
+                    <TextBox Name="UsernameBox" Grid.Column="1" Grid.Row="2"/>
                     <Button Grid.Row="3" Content="Start" Click="Button_Click"/>
                 </Grid>
             </StackPanel>

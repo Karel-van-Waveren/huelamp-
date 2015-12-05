@@ -15,13 +15,8 @@ using Windows.UI.Xaml.Navigation;
 using Huelamp.Models;
 using Windows.Storage;
 
-// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
-
 namespace Huelamp
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
     public sealed partial class MainPage : Page
     {
         private List<Huelampwaardes> huelampen;
@@ -30,16 +25,17 @@ namespace Huelamp
 
         public MainPage()
         {
-        this.InitializeComponent();
-        huelampen = Huelampmanager.GetHuelampen();
-            
+            this.InitializeComponent();
+            huelampen = Huelampmanager.GetHuelampen();
+            fillSettingBoxes();
         }
 
-    private void Infolamp_Tapped(object sender, TappedRoutedEventArgs e)
-    {
+        private void Infolamp_Tapped(object sender, TappedRoutedEventArgs e)
+        {
 
-    }
-        // deze methode in de classe zetten waar je je settings invult
+        }
+
+        // methodes voor alle settings
         public static void SetSettings(string ip, int port, string username)
         {
             MainPage.LOCAL_SETTINGS.Values["ip"] = ip;
@@ -65,11 +61,28 @@ namespace Huelamp
             username = tempUsername;
         }
 
+        public void fillSettingBoxes()
+        {
+            string ip;
+            int port;
+            string username;
+            RetrieveSettings(out ip, out port, out username);
+            IpBox.Text = ip;
+            PortBox.Text = port + "";
+            UsernameBox.Text = username;
+        }
+        // button methodes
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            SetSettings(Ip.Text, Convert.ToInt32(Port.Text), Username.Text);
-            SplitView.IsPaneOpen = !SplitView.IsPaneOpen;
-            Settings.Visibility = Visibility.Collapsed;
+            if (!string.IsNullOrEmpty(IpBox.Text) && !string.IsNullOrEmpty(PortBox.Text) && !string.IsNullOrEmpty(UsernameBox.Text))
+            {
+                SetSettings(IpBox.Text, Convert.ToInt32(PortBox.Text), UsernameBox.Text);
+                SplitView.IsPaneOpen = !SplitView.IsPaneOpen;
+                Settings.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+            }
         }
 
         private void AppBarButton_Click(object sender, RoutedEventArgs e)
