@@ -641,3 +641,4 @@ C:\Users\Karel\Source\Repos\huelamp-\Huelamp\Huelamp\obj\x86\Debug\qualifiers.tx
 C:\Users\Karel\Source\Repos\huelamp-\Huelamp\Huelamp\obj\x86\Debug\qualifiers.txt.intermediate
 C:\Users\Karel\Source\Repos\huelamp-\Huelamp\Huelamp\obj\x86\Debug\MultipleQualifiersPerDimensionFound.txt
 C:\Users\Karel\Source\Repos\huelamp-\Huelamp\Huelamp\obj\x86\Debug\ProjectArchitectures.txt
+C:\Users\Karel\Source\Repos\huelamp-\Huelamp\Huelamp\obj\x86\Debug\Huelamp.csprojResolveAssemblyReference.cache
