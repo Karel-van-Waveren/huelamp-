@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Huelamp.Models;
 using Windows.Storage;
+using Huelamp.Controllers;
 
 namespace Huelamp
 {
@@ -22,12 +23,16 @@ namespace Huelamp
         private List<Huelampwaardes> huelampen;
         public static ApplicationData APP_DATA = ApplicationData.Current;
         public static ApplicationDataContainer LOCAL_SETTINGS = APP_DATA.LocalSettings;
+        public Huelampmanager hlManger;
+        NetworkController nc;
 
         public MainPage()
         {
             this.InitializeComponent();
-            huelampen = Huelampmanager.GetHuelampen();
+            hlManger = new Huelampmanager();
             fillSettingBoxes();
+            nc = new NetworkController(this);
+            huelampen = hlManger.GetHuelampen();
         }
 
         private void Infolamp_Tapped(object sender, TappedRoutedEventArgs e)
@@ -79,9 +84,14 @@ namespace Huelamp
                 SetSettings(IpBox.Text, Convert.ToInt32(PortBox.Text), UsernameBox.Text);
                 SplitView.IsPaneOpen = !SplitView.IsPaneOpen;
                 Settings.Visibility = Visibility.Collapsed;
+                nc.initializeNC();
+
+                    huelampen = hlManger.GetHuelampen();
+
             }
             else
             {
+                //display error that user hasn't filled all the boxes
             }
         }
 
@@ -100,5 +110,10 @@ namespace Huelamp
             else
                 Lamps.Visibility = Visibility.Visible;
         }
+        public void loadLamps()
+        {
+            huelampen = hlManger.GetHuelampen();
+        }
     }
+
 }

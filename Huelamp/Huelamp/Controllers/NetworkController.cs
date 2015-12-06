@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
@@ -10,22 +12,48 @@ namespace Huelamp.Controllers
     class NetworkController
     {
         private string ip;
-        private string port;
+        private int port;
         private string username;
         private string usercode;
+        private MainPage mp;
 
-        public NetworkController(string ip, string port, string username)
+        public NetworkController(MainPage mp)
+        {
+            this.mp = mp;
+        }
+        public NetworkController(string ip, int port, string username,MainPage mp)
         {
             this.ip = ip;
             this.port = port;
             this.username = username;
+            this.mp = mp;
+        }
+
+        public void initializeNC()
+        {
+            MainPage.RetrieveSettings(out ip, out port, out username);
+            getUsername();
+            //Debug.WriteLine("usercode: " + usercode);
         }
 
         private async void getUsername()
         {
-            string postcmd = await PostCommand("api", "{\"devicetype\":\"MijnApp#{" + username + "}\"}");
-            string[] data = postcmd.Split('\"');
+            string cmd = await PostCommand("api", "{\"devicetype\":\"MijnApp#{" + username + "}\"}");
+            string[] data = cmd.Split('\"');
             usercode = data[5];
+            getAllInfo();
+        }
+
+        public async void getAllInfo()
+        {
+            string cmd = await GetCommand("api/" + usercode + "/lights");
+            JObject allInfo = JObject.Parse(cmd);
+            foreach (var item in allInfo)
+            {
+                var light = allInfo["" + item.Key];
+                mp.hlManger.addHuelamp(light);
+            }
+            mp.loadLamps();
         }
 
         public async Task<string> GetCommand(string url)

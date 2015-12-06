@@ -10,7 +10,7 @@
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>5c9f062a-8455-4f63-9d27-051642321ddd</PackageIdentityName>
     <IntermediateOutputPath>C:\Users\marnix\Documents\GitHub\huelamp-\Huelamp\Huelamp\obj\x86\Debug\</IntermediateOutputPath>
-    <RegisteredManifestChecksum>753FBDAEF8AA6BD067C95A5D84BABEABAE5B0BEF9B32E1D4E118C71208935A36</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>A4EFF4C642E7A6A57DF0AD25FBFC1B3CD931C6240E848A5D3FF1468EBB154A62</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>5c9f062a-8455-4f63-9d27-051642321ddd_1.0.0.0_x86__xy7j7x2ap5r4w</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>5c9f062a-8455-4f63-9d27-051642321ddd_xy7j7x2ap5r4w!App</RegisteredUserModeAppID>
     <RegisteredPackageID>5c9f062a-8455-4f63-9d27-051642321ddd</RegisteredPackageID>
@@ -22,7 +22,7 @@
     <AppXManifest Include="C:\Users\marnix\Documents\GitHub\huelamp-\Huelamp\Huelamp\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-12-05T14:43:11.959</Modified>
+      <Modified>2015-12-06T13:44:24.032</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -74,11 +74,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marnix\Documents\GitHub\huelamp-\Huelamp\Huelamp\bin\x86\Debug\Core\Huelamp.exe">
       <PackagePath>Huelamp.exe</PackagePath>
-      <Modified>2015-12-05T14:43:11.957</Modified>
+      <Modified>2015-12-06T13:44:22.518</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marnix\Documents\GitHub\huelamp-\Huelamp\Huelamp\bin\x86\Debug\Core\Huelamp.xr.xml">
       <PackagePath>Huelamp.xr.xml</PackagePath>
-      <Modified>2015-12-05T14:42:21.755</Modified>
+      <Modified>2015-12-06T13:44:22.520</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marnix\Documents\GitHub\huelamp-\Huelamp\Huelamp\bin\x86\Debug\Core\Microsoft.ApplicationInsights.dll">
       <PackagePath>Microsoft.ApplicationInsights.dll</PackagePath>
@@ -110,7 +110,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marnix\Documents\GitHub\huelamp-\Huelamp\Huelamp\bin\x86\Debug\Core\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2015-12-05T14:43:11.641</Modified>
+      <Modified>2015-12-06T13:44:22.530</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marnix\Documents\GitHub\huelamp-\Huelamp\Huelamp\bin\x86\Debug\Core\System.AppContext.dll">
       <PackagePath>System.AppContext.dll</PackagePath>
