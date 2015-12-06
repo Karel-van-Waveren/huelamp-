@@ -10,7 +10,7 @@
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>5c9f062a-8455-4f63-9d27-051642321ddd</PackageIdentityName>
     <IntermediateOutputPath>C:\Users\Karel\Source\Repos\huelamp-\Huelamp\Huelamp\obj\x86\Debug\</IntermediateOutputPath>
-    <RegisteredManifestChecksum>AAFA885C1496B186918BC9911F7BC44B86BA26065047065ACC905BD194517D86</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>A7D0A95F55F0891531D0EBBE05D3EE41E77A15C95EA3B2C0DB9B6B95F1D2C1C5</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>5c9f062a-8455-4f63-9d27-051642321ddd_1.0.0.0_x86__xy7j7x2ap5r4w</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>5c9f062a-8455-4f63-9d27-051642321ddd_xy7j7x2ap5r4w!App</RegisteredUserModeAppID>
     <RegisteredPackageID>5c9f062a-8455-4f63-9d27-051642321ddd</RegisteredPackageID>
@@ -22,13 +22,13 @@
     <AppXManifest Include="C:\Users\Karel\Source\Repos\huelamp-\Huelamp\Huelamp\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-12-05T14:31:54.141</Modified>
+      <Modified>2015-12-06T13:29:05.851</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Karel\Source\Repos\huelamp-\Huelamp\Huelamp\bin\x86\Debug\Huelamp.exe">
       <PackagePath>entrypoint\Huelamp.exe</PackagePath>
-      <Modified>2015-12-05T14:31:53.983</Modified>
+      <Modified>2015-12-06T13:29:05.686</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Karel\.nuget\packages\Microsoft.ApplicationInsights\1.0.0\lib\portable-win81+wpa81\Microsoft.ApplicationInsights.dll">
       <PackagePath>Microsoft.ApplicationInsights.dll</PackagePath>
@@ -101,6 +101,10 @@
     <AppxPackagedFile Include="C:\Users\Karel\.nuget\packages\Microsoft.Win32.Primitives\4.0.0\lib\dotnet\Microsoft.Win32.Primitives.dll">
       <PackagePath>Microsoft.Win32.Primitives.dll</PackagePath>
       <Modified>2015-12-04T20:54:11.549</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Karel\.nuget\packages\Newtonsoft.Json\7.0.1\lib\portable-net45+wp80+win8+wpa81+dnxcore50\Newtonsoft.Json.dll">
+      <PackagePath>Newtonsoft.Json.dll</PackagePath>
+      <Modified>2015-12-04T21:28:13.909</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Karel\.nuget\packages\System.AppContext\4.0.0\lib\netcore50\System.AppContext.dll">
       <PackagePath>System.AppContext.dll</PackagePath>
@@ -506,11 +510,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Karel\Source\Repos\huelamp-\Huelamp\Huelamp\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2015-12-05T14:25:34.173</Modified>
+      <Modified>2015-12-06T13:03:00.782</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Karel\Source\Repos\huelamp-\Huelamp\Huelamp\bin\x86\Debug\Core\Huelamp.exe">
       <PackagePath>Huelamp.exe</PackagePath>
-      <Modified>2015-12-05T14:31:54.139</Modified>
+      <Modified>2015-12-06T13:29:05.849</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

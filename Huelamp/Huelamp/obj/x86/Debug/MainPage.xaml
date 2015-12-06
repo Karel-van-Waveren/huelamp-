@@ -1,0 +1,75 @@
+﻿<Page x:ConnectionId='1'
+    x:Class="Huelamp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Huelamp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:data="using:Huelamp.Models"
+    mc:Ignorable="d">
+
+    <Page.BottomAppBar>
+        <CommandBar>
+            <CommandBar.SecondaryCommands>
+                <AppBarButton x:ConnectionId='2' Label="Settings"                           >
+                    <AppBarButton.Icon>
+                        <BitmapIcon UriSource="/Assets/appbar.rss.png" />
+                    </AppBarButton.Icon>
+                </AppBarButton>
+                <AppBarButton x:ConnectionId='3' Icon="Globe" Label="lamps"                             />
+            </CommandBar.SecondaryCommands>
+        </CommandBar>
+    </Page.BottomAppBar>
+
+    <Page.Resources>
+        <DataTemplate                                  x:Key="textTemplate">
+            <StackPanel x:ConnectionId='4'                         >
+                <Rectangle Height="50" Width="50" Fill="Red" Margin="0,5,0,5"/>
+                <TextBlock x:ConnectionId='5'                     />
+                <StackPanel Visibility="Visible">
+                    <TextBlock Text="On" Margin="0,15,0,0"/>
+                    <ToggleSwitch x:ConnectionId='6'                   />
+                    <TextBlock Text="Hue" Margin="0,15,0,0"/>
+                    <Slider x:ConnectionId='7' Maximum="65555"                     />
+                    <TextBlock Text="Saturation" Margin="0,15,0,0"/>
+                    <Slider x:ConnectionId='8' Maximum="255"                            />
+                    <TextBlock Text="Brightness" Margin="0,15,0,0"/>
+                    <Slider x:ConnectionId='9' Maximum="255"                            />
+                </StackPanel>
+            </StackPanel>
+        </DataTemplate>
+    </Page.Resources>
+
+    <SplitView x:ConnectionId='10' Name="SplitView">
+        <SplitView.Pane>
+            <ListView x:ConnectionId='11'                                  ItemTemplate="{StaticResource textTemplate}" Visibility="Visible" Name="Lamps">
+
+            </ListView>
+        </SplitView.Pane>
+        <SplitView.Content>
+            <StackPanel x:ConnectionId='12' Name="Settings" Visibility="Visible">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="Ip"/>
+                    <TextBox x:ConnectionId='13' Name="IpBox" Grid.Column="1"/>
+                    <TextBlock Text="Port" Grid.Row="1"/>
+                    <TextBox x:ConnectionId='14' Name="PortBox" Grid.Column="1" Grid.Row="1"/>
+                    <TextBlock Text="Username" Grid.Row="2"/>
+                    <TextBox x:ConnectionId='15' Name="UsernameBox" Grid.Column="1" Grid.Row="2"/>
+                    <Button x:ConnectionId='16' Grid.Row="3" Content="Start"                     />
+                </Grid>
+            </StackPanel>
+        </SplitView.Content>
+    </SplitView>
+    
+</Page>
+
