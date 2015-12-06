@@ -27,20 +27,32 @@
                 <Rectangle Height="50" Width="50" Fill="Red" Margin="0,5,0,5"/>
                 <TextBlock x:ConnectionId='5'                     />
                 <StackPanel Visibility="Visible">
-                    <TextBlock Text="On" Margin="0,15,0,0"/>
-                    <ToggleSwitch x:ConnectionId='6'                   />
-                    <TextBlock Text="Hue" Margin="0,15,0,0"/>
-                    <Slider x:ConnectionId='7' Maximum="65555"                     />
-                    <TextBlock Text="Saturation" Margin="0,15,0,0"/>
-                    <Slider x:ConnectionId='8' Maximum="255"                            />
-                    <TextBlock Text="Brightness" Margin="0,15,0,0"/>
-                    <Slider x:ConnectionId='9' Maximum="255"                            />
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="On" Margin="0,15,0,0"/>
+                        <ToggleSwitch x:ConnectionId='6'                    Grid.Column="1"/>
+                        <TextBlock Text="Hue" Margin="0,15,0,0" Grid.Row="1"/>
+                        <Slider x:ConnectionId='7' Maximum="65555"                      Grid.Row="1" Grid.Column="1"/>
+                        <TextBlock Text="Saturation" Margin="0,15,0,0" Grid.Row="2"/>
+                        <Slider x:ConnectionId='8' Maximum="255"                             Grid.Row="2" Grid.Column="1"/>
+                        <TextBlock Text="Brightness" Margin="0,15,0,0" Grid.Row="3"/>
+                        <Slider x:ConnectionId='9' Maximum="255"                             Grid.Row="3" Grid.Column="1"/>
+                    </Grid>
                 </StackPanel>
             </StackPanel>
         </DataTemplate>
     </Page.Resources>
 
-    <SplitView x:ConnectionId='10' Name="SplitView">
+    <SplitView x:ConnectionId='10' Name="SplitView" DisplayMode="Inline" OpenPaneLength="1200">
         <SplitView.Pane>
             <ListView x:ConnectionId='11'                                  ItemTemplate="{StaticResource textTemplate}" Visibility="Visible" Name="Lamps">
 

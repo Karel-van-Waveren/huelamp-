@@ -1079,3 +1079,6 @@ C:\Users\marnix\Documents\GitHub\huelamp-\Huelamp\Huelamp\obj\x86\Debug\Core\Hue
 C:\Users\marnix\Documents\GitHub\huelamp-\Huelamp\Huelamp\obj\x86\Debug\Core\Huelamp.xr.xml
 C:\Users\marnix\Documents\GitHub\huelamp-\Huelamp\Huelamp\obj\x86\Debug\Core\resources.pri
 C:\Users\Karel\Source\Repos\huelamp-\Huelamp\Huelamp\bin\x86\Debug\Newtonsoft.Json.dll
+C:\Users\marnix\Documents\GitHub\huelamp-\Huelamp\Huelamp\bin\x86\Debug\Core\Newtonsoft.Json.dll
+C:\Users\marnix\Documents\GitHub\huelamp-\Huelamp\Huelamp\bin\x86\Debug\Newtonsoft.Json.dll
+C:\Users\marnix\Documents\GitHub\huelamp-\Huelamp\Huelamp\obj\x86\Debug\Core\Newtonsoft.Json.dll

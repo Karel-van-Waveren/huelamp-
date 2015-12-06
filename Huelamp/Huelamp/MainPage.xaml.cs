@@ -97,6 +97,7 @@ namespace Huelamp
 
         private void AppBarButton_Click(object sender, RoutedEventArgs e)
         {
+            SplitView.IsPaneOpen = !SplitView.IsPaneOpen;
             if (Settings.Visibility == Visibility.Visible)
                 Settings.Visibility = Visibility.Collapsed;
             else
@@ -105,6 +106,7 @@ namespace Huelamp
 
         private void AppBarButton_Click_1(object sender, RoutedEventArgs e)
         {
+            SplitView.IsPaneOpen = !SplitView.IsPaneOpen;
             if (Lamps.Visibility == Visibility.Visible)
                 Lamps.Visibility = Visibility.Collapsed;
             else
