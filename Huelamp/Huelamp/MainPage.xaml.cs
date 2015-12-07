@@ -15,12 +15,13 @@ using Windows.UI.Xaml.Navigation;
 using Huelamp.Models;
 using Windows.Storage;
 using Huelamp.Controllers;
+using System.Collections.ObjectModel;
 
 namespace Huelamp
 {
     public sealed partial class MainPage : Page
     {
-        private List<Huelampwaardes> huelampen;
+        private ObservableCollection<Huelampwaardes> huelampen;
         public static ApplicationData APP_DATA = ApplicationData.Current;
         public static ApplicationDataContainer LOCAL_SETTINGS = APP_DATA.LocalSettings;
         public Huelampmanager hlManger;
@@ -29,6 +30,7 @@ namespace Huelamp
         public MainPage()
         {
             this.InitializeComponent();
+            DataContext = new Huelampwaardes();
             hlManger = new Huelampmanager();
             fillSettingBoxes();
             nc = new NetworkController(this);
@@ -82,39 +84,30 @@ namespace Huelamp
             if (!string.IsNullOrEmpty(IpBox.Text) && !string.IsNullOrEmpty(PortBox.Text) && !string.IsNullOrEmpty(UsernameBox.Text))
             {
                 SetSettings(IpBox.Text, Convert.ToInt32(PortBox.Text), UsernameBox.Text);
-                SplitView.IsPaneOpen = !SplitView.IsPaneOpen;
-                Settings.Visibility = Visibility.Collapsed;
                 nc.initializeNC();
-
                 huelampen = hlManger.GetHuelampen();
-
+                SplitView.IsPaneOpen = !SplitView.IsPaneOpen;
             }
             else
             {
                 //display error that user hasn't filled all the boxes
+                
             }
         }
 
         private void AppBarButton_Click(object sender, RoutedEventArgs e)
         {
             SplitView.IsPaneOpen = !SplitView.IsPaneOpen;
-            if (Settings.Visibility == Visibility.Visible)
-                Settings.Visibility = Visibility.Collapsed;
-            else
-                Settings.Visibility = Visibility.Visible;
         }
 
         private void AppBarButton_Click_1(object sender, RoutedEventArgs e)
         {
             SplitView.IsPaneOpen = !SplitView.IsPaneOpen;
-            if (Lamps.Visibility == Visibility.Visible)
-                Lamps.Visibility = Visibility.Collapsed;
-            else
-                Lamps.Visibility = Visibility.Visible;
         }
         public void loadLamps()
         {
             huelampen = hlManger.GetHuelampen();
+            Lamps.UpdateLayout();
         }
     }
 

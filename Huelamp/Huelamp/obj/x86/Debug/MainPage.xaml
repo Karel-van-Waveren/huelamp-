@@ -41,7 +41,7 @@
                         <TextBlock Text="On" Margin="0,15,0,0"/>
                         <ToggleSwitch x:ConnectionId='6'                    Grid.Column="1"/>
                         <TextBlock Text="Hue" Margin="0,15,0,0" Grid.Row="1"/>
-                        <Slider x:ConnectionId='7' Maximum="65555"                      Grid.Row="1" Grid.Column="1"/>
+                        <Slider x:ConnectionId='7' Maximum="65280"                      Grid.Row="1" Grid.Column="1"/>
                         <TextBlock Text="Saturation" Margin="0,15,0,0" Grid.Row="2"/>
                         <Slider x:ConnectionId='8' Maximum="255"                             Grid.Row="2" Grid.Column="1"/>
                         <TextBlock Text="Brightness" Margin="0,15,0,0" Grid.Row="3"/>
@@ -54,7 +54,7 @@
 
     <SplitView x:ConnectionId='10' Name="SplitView" DisplayMode="Inline" OpenPaneLength="1200">
         <SplitView.Pane>
-            <ListView x:ConnectionId='11'                                  ItemTemplate="{StaticResource textTemplate}" Visibility="Visible" Name="Lamps">
+            <ListView x:ConnectionId='11'                                  ItemTemplate="{StaticResource textTemplate}" Visibility="Visible" Name="Lamps" >
 
             </ListView>
         </SplitView.Pane>
