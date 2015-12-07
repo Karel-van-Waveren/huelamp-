@@ -24,8 +24,12 @@
     <Page.Resources>
         <DataTemplate                                  x:Key="textTemplate">
             <StackPanel x:ConnectionId='4'                         >
-                <Rectangle Height="50" Width="50" Fill="Red" Margin="0,5,0,5"/>
-                <TextBlock x:ConnectionId='5'                     />
+                <Rectangle Height="50" Width="50" Margin="0,5,0,5">
+                    <Rectangle.Fill>
+                        <SolidColorBrush x:ConnectionId='10'                       />
+                    </Rectangle.Fill>
+                </Rectangle>
+                    <TextBlock x:ConnectionId='5'                     />
                 <StackPanel Visibility="Visible">
                     <Grid>
                         <Grid.ColumnDefinitions>
@@ -52,14 +56,14 @@
         </DataTemplate>
     </Page.Resources>
 
-    <SplitView x:ConnectionId='10' Name="SplitView" DisplayMode="Inline" OpenPaneLength="1200">
+    <SplitView x:ConnectionId='11' Name="SplitView" DisplayMode="Inline" OpenPaneLength="1200">
         <SplitView.Pane>
-            <ListView x:ConnectionId='11'                                  ItemTemplate="{StaticResource textTemplate}" Visibility="Visible" Name="Lamps" >
+            <ListView x:ConnectionId='12'                                  ItemTemplate="{StaticResource textTemplate}" Visibility="Visible" Name="Lamps" >
 
             </ListView>
         </SplitView.Pane>
         <SplitView.Content>
-            <StackPanel x:ConnectionId='12' Name="Settings" Visibility="Visible">
+            <StackPanel x:ConnectionId='13' Name="Settings" Visibility="Visible">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>
@@ -72,12 +76,12 @@
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
                     <TextBlock Text="Ip"/>
-                    <TextBox x:ConnectionId='13' Name="IpBox" Grid.Column="1"/>
+                    <TextBox x:ConnectionId='14' Name="IpBox" Grid.Column="1"/>
                     <TextBlock Text="Port" Grid.Row="1"/>
-                    <TextBox x:ConnectionId='14' Name="PortBox" Grid.Column="1" Grid.Row="1"/>
+                    <TextBox x:ConnectionId='15' Name="PortBox" Grid.Column="1" Grid.Row="1"/>
                     <TextBlock Text="Username" Grid.Row="2"/>
-                    <TextBox x:ConnectionId='15' Name="UsernameBox" Grid.Column="1" Grid.Row="2"/>
-                    <Button x:ConnectionId='16' Grid.Row="3" Content="Start"                     />
+                    <TextBox x:ConnectionId='16' Name="UsernameBox" Grid.Column="1" Grid.Row="2"/>
+                    <Button x:ConnectionId='17' Grid.Row="3" Content="Start"                     />
                 </Grid>
             </StackPanel>
         </SplitView.Content>
