@@ -86,7 +86,7 @@ namespace Huelamp
                 Settings.Visibility = Visibility.Collapsed;
                 nc.initializeNC();
 
-                    huelampen = hlManger.GetHuelampen();
+                huelampen = hlManger.GetHuelampen();
 
             }
             else

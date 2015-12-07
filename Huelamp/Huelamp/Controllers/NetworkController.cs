@@ -51,7 +51,7 @@ namespace Huelamp.Controllers
             foreach (var item in allInfo)
             {
                 var light = allInfo["" + item.Key];
-                mp.hlManger.addHuelamp(light);
+                mp.hlManger.addHuelamp(light,int.Parse(item.Key));
             }
             mp.loadLamps();
         }

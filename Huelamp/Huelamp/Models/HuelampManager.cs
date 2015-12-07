@@ -17,17 +17,18 @@ namespace Huelamp.Models
 
         }
 
-        public void addHuelamp(JToken lamp)
+        public void addHuelamp(JToken lamp,int lampid )
         {
             var state = lamp["state"];
             huelampen.Add(new Huelampwaardes
             {
+                id = lampid,
                 on = (state["on"].ToString() == "true") ? true : false,
                 brightness = int.Parse(state["bri"].ToString()),
                 hue = int.Parse(state["hue"].ToString()),
                 saturation = int.Parse(state["sat"].ToString())
             });
-            Debug.WriteLine("added " + lamp["name"].ToString());
+            Debug.WriteLine("added " + lampid);
 
         }
 
