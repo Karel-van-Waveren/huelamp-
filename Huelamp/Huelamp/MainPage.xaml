@@ -52,7 +52,7 @@
         </DataTemplate>
     </Page.Resources>
 
-    <SplitView Name="SplitView" DisplayMode="Inline" OpenPaneLength="1200">
+    <SplitView Name="SplitView" DisplayMode="Inline" OpenPaneLength="1250">
         <SplitView.Pane>
             <ListView ItemsSource="{x:Bind huelampen}" ItemTemplate="{StaticResource textTemplate}" Visibility="Visible" Name="Lamps" >
 
