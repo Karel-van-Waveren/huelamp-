@@ -19,7 +19,7 @@ namespace Huelamp.Models
 
         }
 
-        public void addHuelamp(JToken lamp,int lampid )
+        public void addHuelamp(JToken lamp, int lampid)
         {
             var state = lamp["state"];
             huelampen.Add(new Huelampwaardes

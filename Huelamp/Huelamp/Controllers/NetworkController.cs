@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using Huelamp.Models;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -21,7 +22,7 @@ namespace Huelamp.Controllers
         {
             this.mp = mp;
         }
-        public NetworkController(string ip, int port, string username,MainPage mp)
+        public NetworkController(string ip, int port, string username, MainPage mp)
         {
             this.ip = ip;
             this.port = port;
@@ -44,19 +45,30 @@ namespace Huelamp.Controllers
             getAllInfo();
         }
 
-        public async void getAllInfo()
+        private async void getAllInfo()
         {
             string cmd = await GetCommand("api/" + usercode + "/lights");
             JObject allInfo = JObject.Parse(cmd);
             foreach (var item in allInfo)
             {
                 var light = allInfo["" + item.Key];
-                mp.hlManger.addHuelamp(light,int.Parse(item.Key));
+                mp.hlManger.addHuelamp(light, int.Parse(item.Key));
             }
             mp.loadLamps();
         }
 
-        public async Task<string> GetCommand(string url)
+        public async void setLamp(Huelampwaardes lamp)
+        {
+            string id = lamp.id.ToString();
+            string bri = lamp.brightness.ToString();
+            string hue = lamp.hue.ToString();
+            string sat = lamp.saturation.ToString();
+
+            string data = "{\"bri\": " + bri + ", \"hue\": " + hue + ", \"sat\": " + sat + "  }";
+            await PutCommand("api/" + usercode + "/lights/" + id + "/state", data);
+        }
+
+        private async Task<string> GetCommand(string url)
         {
             url = "http://" + ip + ":" + port + "/" + url;
             using (HttpClient Httpcl = new HttpClient())
@@ -66,18 +78,18 @@ namespace Huelamp.Controllers
                 return await response.Content.ReadAsStringAsync();
             }
         }
-        public async Task<string> PostCommand(string url, string Data)
+        private async Task<string> PostCommand(string url, string Data)
         {
             url = "http://" + ip + ":" + port + "/" + url;
             HttpContent content = new StringContent(Data, Encoding.UTF8, "application/json");
             using (HttpClient Httpcl = new HttpClient())
             {
-                var response = await Httpcl.PostAsync(url,content);
+                var response = await Httpcl.PostAsync(url, content);
                 response.EnsureSuccessStatusCode();
                 return await response.Content.ReadAsStringAsync();
             }
         }
-        public async Task<string> PutCommand(string url, string Data)
+        private async Task<string> PutCommand(string url, string Data)
         {
             url = "http://" + ip + ":" + port + "/" + url;
             HttpContent content = new StringContent(Data, Encoding.UTF8, "application/json");

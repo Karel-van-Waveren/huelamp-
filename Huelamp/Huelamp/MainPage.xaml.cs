@@ -16,6 +16,7 @@ using Huelamp.Models;
 using Windows.Storage;
 using Huelamp.Controllers;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 
 namespace Huelamp
 {
@@ -91,7 +92,7 @@ namespace Huelamp
             else
             {
                 //display error that user hasn't filled all the boxes
-                
+
             }
         }
 
@@ -108,6 +109,31 @@ namespace Huelamp
         {
             huelampen = hlManger.GetHuelampen();
             Lamps.UpdateLayout();
+        }
+
+        private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e)
+        {
+            //huelampen[0].hue = HueSlider.Value
+            Debug.WriteLine("send by: " + sender.GetHashCode() + " Value changed to: " + e.NewValue);
+        }
+
+        private void Send_Click(object sender, RoutedEventArgs e)
+        {
+            nc.setLamp(huelampen[0]);
+        }
+
+        private void SatSlider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e)
+        {
+            huelampen[0].saturation = e.NewValue;
+        }
+        private void BriSlider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e)
+        {
+            huelampen[0].brightness = e.NewValue;
+        }
+
+        private void HueSlider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e)
+        {
+            huelampen[0].hue = e.NewValue;
         }
     }
 

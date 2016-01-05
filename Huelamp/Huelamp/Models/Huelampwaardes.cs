@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Huelamp.Controllers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
@@ -10,7 +11,7 @@ using Windows.UI.Xaml.Media;
 
 namespace Huelamp.Models
 {
-    public class Huelampwaardes: INotifyPropertyChanging
+    public class Huelampwaardes
     {
         public double id { get; set; }
         public double brightness { get; set; }
@@ -23,15 +24,7 @@ namespace Huelamp.Models
 
         public Color FillRectangle()
         {
-            Color c = new Color();
-            c.A = 255;
-            c.R = Convert.ToByte(0);
-            c.G = Convert.ToByte(255);
-            c.B = Convert.ToByte(0);
-            return c;
+            return ColorUtil.HsvToRgb(hue, saturation, brightness);
         }
-
-
-        public event PropertyChangingEventHandler PropertyChanging;
     }
 }
