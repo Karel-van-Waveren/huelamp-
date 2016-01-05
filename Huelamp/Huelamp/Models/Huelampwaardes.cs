@@ -22,9 +22,11 @@ namespace Huelamp.Models
         public Boolean on { get; set; }
         public Color kleur { get { return FillRectangle(); } set { FillRectangle(); } }
 
+        
         public Color FillRectangle()
         {
             return ColorUtil.HsvToRgb(hue, saturation, brightness);
         }
+        
     }
 }

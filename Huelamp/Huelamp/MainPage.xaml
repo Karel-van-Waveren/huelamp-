@@ -40,18 +40,16 @@
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
                         <TextBlock Text="On" Margin="0,15,0,0"/>
-                        <ToggleSwitch IsOn="{x:Bind on}" Grid.Column="1"/>
+                        <ToggleSwitch x:Name="Onswitch" IsOn="{x:Bind on}" Grid.Column="1"/>
                         <TextBlock Text="Hue" Margin="0,15,0,0" Grid.Row="1"/>
-                        <Slider x:Name="HueSlider" Maximum="65280" Value="{x:Bind hue}"  Grid.Row="1" Grid.Column="1" ValueChanged="HueSlider_ValueChanged"/>
+                        <Slider x:Name="Sliderhue" Maximum="65280" Value="{x:Bind hue}" Grid.Row="1" Grid.Column="1"/>
                         <TextBlock Text="Saturation" Margin="0,15,0,0" Grid.Row="2"/>
-                        <Slider x:Name="SatSlider" Maximum="254" Value="{x:Bind saturation}" Grid.Row="2" Grid.Column="1" ValueChanged="SatSlider_ValueChanged"/>
-                        <TextBlock Text="Brightness"  Margin="0,15,0,0" Grid.Row="3"/>
-                        <Slider x:Name="BriSlider" Maximum="254" Value="{x:Bind brightness}" Grid.Row="3" Grid.Column="1" ValueChanged="BriSlider_ValueChanged"/>
-                        <Button Name="Send" Content="Send" Margin="0,15,0,15" Grid.Row="4" Click="Send_Click"/>
+                        <Slider x:Name="Slidersaturation" Maximum="255" Value="{x:Bind saturation}" Grid.Row="2" Grid.Column="1"/>
+                        <TextBlock Text="Brightness" Margin="0,15,0,0" Grid.Row="3"/>
+                        <Slider x:Name="Sliderbrightness" Maximum="255" Value="{x:Bind brightness}" Grid.Row="3" Grid.Column="1"/>
                     </Grid>
                 </StackPanel>
             </StackPanel>
