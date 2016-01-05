@@ -22,7 +22,7 @@
     <AppXManifest Include="C:\Users\marnix\Documents\GitHub\huelamp-\Huelamp\Huelamp\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-01-05T11:19:18.656</Modified>
+      <Modified>2016-01-05T12:00:46.768</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -70,15 +70,15 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marnix\Documents\GitHub\huelamp-\Huelamp\Huelamp\bin\x86\Debug\Core\entrypoint\Huelamp.exe">
       <PackagePath>entrypoint\Huelamp.exe</PackagePath>
-      <Modified>2016-01-05T11:19:17.660</Modified>
+      <Modified>2016-01-05T12:00:46.053</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marnix\Documents\GitHub\huelamp-\Huelamp\Huelamp\bin\x86\Debug\Core\Huelamp.exe">
       <PackagePath>Huelamp.exe</PackagePath>
-      <Modified>2016-01-05T11:19:18.651</Modified>
+      <Modified>2016-01-05T12:00:46.767</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marnix\Documents\GitHub\huelamp-\Huelamp\Huelamp\bin\x86\Debug\Core\Huelamp.xr.xml">
       <PackagePath>Huelamp.xr.xml</PackagePath>
-      <Modified>2016-01-05T11:16:51.824</Modified>
+      <Modified>2016-01-05T12:00:45.901</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marnix\Documents\GitHub\huelamp-\Huelamp\Huelamp\bin\x86\Debug\Core\Microsoft.ApplicationInsights.dll">
       <PackagePath>Microsoft.ApplicationInsights.dll</PackagePath>
@@ -114,7 +114,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marnix\Documents\GitHub\huelamp-\Huelamp\Huelamp\bin\x86\Debug\Core\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2016-01-05T11:19:18.212</Modified>
+      <Modified>2016-01-05T12:00:46.449</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marnix\Documents\GitHub\huelamp-\Huelamp\Huelamp\bin\x86\Debug\Core\System.AppContext.dll">
       <PackagePath>System.AppContext.dll</PackagePath>

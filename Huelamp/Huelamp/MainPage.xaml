@@ -36,7 +36,7 @@
 
     <SplitView Name="SplitView" DisplayMode="Inline" OpenPaneLength="1250">
         <SplitView.Pane>
-            <ListView ItemsSource="{x:Bind huelampen}" ItemTemplate="{StaticResource textTemplate}" Visibility="Visible" Name="Lamps" >
+            <ListView ItemsSource="{x:Bind huelampen}" ItemTemplate="{StaticResource textTemplate}" IsItemClickEnabled="True" ItemClick="LightListView_OnItemClick" Name="Lamps" >
 
             </ListView>
         </SplitView.Pane>
