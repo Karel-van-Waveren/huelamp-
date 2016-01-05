@@ -30,28 +30,6 @@
                     </Rectangle.Fill>
                 </Rectangle>
                     <TextBlock Text="{x:Bind naam}"/>
-                <StackPanel Visibility="Visible">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
-                        <TextBlock Text="On" Margin="0,15,0,0"/>
-                        <ToggleSwitch x:Name="Onswitch" IsOn="{x:Bind on}" Grid.Column="1"/>
-                        <TextBlock Text="Hue" Margin="0,15,0,0" Grid.Row="1"/>
-                        <Slider x:Name="Sliderhue" Maximum="65280" Value="{x:Bind hue}" Grid.Row="1" Grid.Column="1"/>
-                        <TextBlock Text="Saturation" Margin="0,15,0,0" Grid.Row="2"/>
-                        <Slider x:Name="Slidersaturation" Maximum="255" Value="{x:Bind saturation}" Grid.Row="2" Grid.Column="1"/>
-                        <TextBlock Text="Brightness" Margin="0,15,0,0" Grid.Row="3"/>
-                        <Slider x:Name="Sliderbrightness" Maximum="255" Value="{x:Bind brightness}" Grid.Row="3" Grid.Column="1"/>
-                    </Grid>
-                </StackPanel>
             </StackPanel>
         </DataTemplate>
     </Page.Resources>
