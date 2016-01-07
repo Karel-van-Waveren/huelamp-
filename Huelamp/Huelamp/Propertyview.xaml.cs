@@ -61,18 +61,14 @@ namespace Huelamp
             huelamp.hue = e.NewValue;
             update();
         }
- 
+
         private void LampToggle_Toggled(object sender, RoutedEventArgs e)
         {
-            // ik ben hier niet trots op 
-            // de toggleswitch voert een event uit voordat huelamp is geinitializeerd waardoor ik een null pointer error krijg
-            if (i == 1)
+            if (huelamp != null)
             {
                 huelamp.on = LampToggle.IsOn;
                 update();
             }
-            else
-                i++;
         }
 
         void update()
