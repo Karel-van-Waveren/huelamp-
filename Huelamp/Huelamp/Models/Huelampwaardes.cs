@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.UI;
+using Windows.UI.Xaml;
 using Windows.UI.Xaml.Media;
 
 namespace Huelamp.Models
@@ -21,10 +22,11 @@ namespace Huelamp.Models
         public Boolean isVisible { get; set; }
         public Boolean on { get; set; }
         public Color kleur { get { return FillRectangle(); } set { FillRectangle(); } }
-
+        
         public Color FillRectangle()
         {
             return ColorUtil.HsvToRgb(hue, saturation, brightness);
         }
+
     }
 }

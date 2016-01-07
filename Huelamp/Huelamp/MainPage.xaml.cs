@@ -31,12 +31,33 @@ namespace Huelamp
         public MainPage()
         {
             this.InitializeComponent();
-            DataContext = new Huelampwaardes();
+            this.DataContext = new Huelampwaardes();
             hlManger = new Huelampmanager();
             fillSettingBoxes();
             nc = new NetworkController(this);
             huelampen = hlManger.GetHuelampen();
         }
+
+        private List<FrameworkElement> GetChildren(DependencyObject parent)
+        {
+            List<FrameworkElement> controls = new List<FrameworkElement>();
+
+            for (int i = 0; i < VisualTreeHelper.GetChildrenCount(parent); ++i)
+            {
+                var child = VisualTreeHelper.GetChild(parent, i);
+                if (child is FrameworkElement)
+                {
+                    controls.Add(child as FrameworkElement);
+                }
+                controls.AddRange(GetChildren(child));
+            }
+
+            return controls;
+        }
+
+
+
+
 
         private void Infolamp_Tapped(object sender, TappedRoutedEventArgs e)
         {
@@ -117,24 +138,6 @@ namespace Huelamp
             Debug.WriteLine("send by: " + sender.GetHashCode() + " Value changed to: " + e.NewValue);
         }
 
-        private void Send_Click(object sender, RoutedEventArgs e)
-        {
-            nc.setLamp(huelampen[0]);
-        }
-
-        private void SatSlider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e)
-        {
-            huelampen[0].saturation = e.NewValue;
-        }
-        private void BriSlider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e)
-        {
-            huelampen[0].brightness = e.NewValue;
-        }
-
-        private void HueSlider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e)
-        {
-            huelampen[0].hue = e.NewValue;
-        }
     }
 
 }

@@ -1,1 +1,1 @@
-C:\Users\marnix\Documents\GitHub\huelamp-\Huelamp\Huelamp\Huelamp.csproj;x86
+C:\Users\Karel\Source\Repos\huelamp-\Huelamp\Huelamp\Huelamp.csproj;x86

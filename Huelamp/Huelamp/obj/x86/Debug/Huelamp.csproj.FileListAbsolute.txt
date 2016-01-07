@@ -1082,3 +1082,13 @@ C:\Users\Karel\Source\Repos\huelamp-\Huelamp\Huelamp\bin\x86\Debug\Newtonsoft.Js
 C:\Users\marnix\Documents\GitHub\huelamp-\Huelamp\Huelamp\bin\x86\Debug\Core\Newtonsoft.Json.dll
 C:\Users\marnix\Documents\GitHub\huelamp-\Huelamp\Huelamp\bin\x86\Debug\Newtonsoft.Json.dll
 C:\Users\marnix\Documents\GitHub\huelamp-\Huelamp\Huelamp\obj\x86\Debug\Core\Newtonsoft.Json.dll
+C:\Users\marnix\Documents\GitHub\huelamp-\Huelamp\Huelamp\obj\x86\Debug\Propertyview.g.i.cs
+C:\Users\marnix\Documents\GitHub\huelamp-\Huelamp\Huelamp\obj\x86\Debug\Propertyview.g.cs
+C:\Users\marnix\Documents\GitHub\huelamp-\Huelamp\Huelamp\obj\x86\Debug\Propertyview.xaml
+C:\Users\marnix\Documents\GitHub\huelamp-\Huelamp\Huelamp\obj\x86\Debug\Propertyview.xbf
+C:\Users\marnix\Documents\GitHub\huelamp-\Huelamp\Huelamp\bin\x86\Debug\Propertyview.xbf
+C:\Users\Karel\Source\Repos\huelamp-\Huelamp\Huelamp\bin\x86\Debug\Propertyview.xbf
+C:\Users\Karel\Source\Repos\huelamp-\Huelamp\Huelamp\obj\x86\Debug\Propertyview.g.i.cs
+C:\Users\Karel\Source\Repos\huelamp-\Huelamp\Huelamp\obj\x86\Debug\Propertyview.g.cs
+C:\Users\Karel\Source\Repos\huelamp-\Huelamp\Huelamp\obj\x86\Debug\Propertyview.xaml
+C:\Users\Karel\Source\Repos\huelamp-\Huelamp\Huelamp\obj\x86\Debug\Propertyview.xbf
