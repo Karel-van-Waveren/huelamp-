@@ -116,6 +116,12 @@ namespace Huelamp
 
             }
         }
+        private void LightListView_OnItemClick(object sender, ItemClickEventArgs e)
+        {
+            Huelampwaardes huelamp = e.ClickedItem as Huelampwaardes;
+            Frame frame = Window.Current.Content as Frame;
+            frame.Navigate(typeof(Propertyview), huelamp);
+        }
 
         private void AppBarButton_Click(object sender, RoutedEventArgs e)
         {
