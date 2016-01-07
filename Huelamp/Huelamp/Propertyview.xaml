@@ -16,16 +16,18 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        <TextBlock Text="On" Margin="0,15,0,0"/>
-        <ToggleSwitch IsOn="{x:Bind huelamp.on}" Grid.Column="1"/>
-        <TextBlock Text="Hue" Margin="0,15,0,0" Grid.Row="1"/>
-        <Slider x:Name="Sliderhue" ValueChanged="Sliderhue_ValueChanged" Maximum="65280" Value="{x:Bind huelamp.hue}" Grid.Row="1" Grid.Column="1"/>
-        <TextBlock Text="Saturation" Margin="0,15,0,0" Grid.Row="2"/>
-        <Slider x:Name="Slidersat" ValueChanged="Slidersat_ValueChanged" Maximum="255" Value="{x:Bind huelamp.saturation}" Grid.Row="2" Grid.Column="1"/>
-        <TextBlock Text="Brightness" Margin="0,15,0,0" Grid.Row="3"/>
-        <Slider x:Name="Sliderbright" ValueChanged="Sliderbright_ValueChanged" Maximum="255" Value="{x:Bind huelamp.brightness}" Grid.Row="3" Grid.Column="1"/>
-        <Button Name="Send" Content="Send" Margin="0,50,0,15" Grid.Row="4" Click="Send_Click" VerticalAlignment="Top"/>
+        <Button Name="Back" Content="Back" Grid.Row="0" VerticalAlignment="Bottom" Click="Back_Click"/>
+        <TextBlock Text="On" Margin="0,15,0,0" Grid.Row="1"/>
+        <ToggleSwitch IsOn="{x:Bind huelamp.on}" Grid.Column="1" Grid.Row="1"/>
+        <TextBlock Text="Hue" Margin="0,15,0,0" Grid.Row="2"/>
+        <Slider x:Name="Sliderhue" ValueChanged="Sliderhue_ValueChanged" Maximum="65280" Value="{x:Bind huelamp.hue}" Grid.Row="2" Grid.Column="1"/>
+        <TextBlock Text="Saturation" Margin="0,15,0,0" Grid.Row="3"/>
+        <Slider x:Name="Slidersat" ValueChanged="Slidersat_ValueChanged" Maximum="255" Value="{x:Bind huelamp.saturation}" Grid.Row="3" Grid.Column="1"/>
+        <TextBlock Text="Brightness" Margin="0,15,0,0" Grid.Row="4"/>
+        <Slider x:Name="Sliderbright" ValueChanged="Sliderbright_ValueChanged" Maximum="255" Value="{x:Bind huelamp.brightness}" Grid.Row="4" Grid.Column="1"/>
+        <Button Name="Send" Content="Send" Margin="0,50,0,15" Grid.Row="5" Click="Send_Click" VerticalAlignment="Top"/>
     </Grid>
 </Page>

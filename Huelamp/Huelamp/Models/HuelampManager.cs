@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using Huelamp.Controllers;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -19,7 +20,7 @@ namespace Huelamp.Models
 
         }
 
-        public void addHuelamp(JToken lamp, int lampid)
+        public void addHuelamp(JToken lamp, int lampid, NetworkController networkc)
         {
             var state = lamp["state"];
             huelampen.Add(new Huelampwaardes
@@ -28,7 +29,8 @@ namespace Huelamp.Models
                 on = (state["on"].ToString() == "true") ? true : false,
                 brightness = int.Parse(state["bri"].ToString()),
                 hue = int.Parse(state["hue"].ToString()),
-                saturation = int.Parse(state["sat"].ToString())
+                saturation = int.Parse(state["sat"].ToString()),
+                nc = networkc
             });
             Debug.WriteLine("added " + lampid);
 

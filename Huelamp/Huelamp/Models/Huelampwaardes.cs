@@ -22,10 +22,16 @@ namespace Huelamp.Models
         public Boolean isVisible { get; set; }
         public Boolean on { get; set; }
         public Color kleur { get { return FillRectangle(); } set { FillRectangle(); } }
-        
-        public Color FillRectangle()
+        public NetworkController nc { get; set; }
+
+    public Color FillRectangle()
         {
             return ColorUtil.HsvToRgb(hue, saturation, brightness);
+        }
+
+        public void setLamp()
+        {
+            nc.setLamp(this);
         }
 
     }

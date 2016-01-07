@@ -79,8 +79,8 @@
     <RootType FullName="Windows.UI.Xaml.Controls.Button">
       <RootProperty Name="Content" />
       <RootProperty Name="Name" />
-      <RootProperty Name="Margin" />
       <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Margin" />
       <RootEvent Name="Click" />
     </RootType>
     <RootType FullName="Huelamp.MainPage" />

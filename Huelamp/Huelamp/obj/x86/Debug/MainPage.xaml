@@ -36,7 +36,7 @@
 
     <SplitView x:ConnectionId='7' Name="SplitView" DisplayMode="Inline" OpenPaneLength="1250">
         <SplitView.Pane>
-            <ListView x:ConnectionId='8'                                  ItemTemplate="{StaticResource textTemplate}" Visibility="Visible" Name="Lamps" >
+            <ListView x:ConnectionId='8'                                  ItemTemplate="{StaticResource textTemplate}" IsItemClickEnabled="True"                                       Name="Lamps" >
 
             </ListView>
         </SplitView.Pane>

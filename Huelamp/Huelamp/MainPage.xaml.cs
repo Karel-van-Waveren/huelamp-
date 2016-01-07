@@ -138,12 +138,6 @@ namespace Huelamp
             Lamps.UpdateLayout();
         }
 
-        private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e)
-        {
-            //huelampen[0].hue = HueSlider.Value
-            Debug.WriteLine("send by: " + sender.GetHashCode() + " Value changed to: " + e.NewValue);
-        }
-
     }
 
 }

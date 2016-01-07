@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Huelamp.Controllers
 {
-    class NetworkController
+    public class NetworkController
     {
         private string ip;
         private int port;
@@ -52,7 +52,7 @@ namespace Huelamp.Controllers
             foreach (var item in allInfo)
             {
                 var light = allInfo["" + item.Key];
-                mp.hlManger.addHuelamp(light, int.Parse(item.Key));
+                mp.hlManger.addHuelamp(light, int.Parse(item.Key),this);
             }
             mp.loadLamps();
         }

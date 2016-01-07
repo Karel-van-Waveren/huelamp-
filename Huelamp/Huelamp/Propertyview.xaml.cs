@@ -1,6 +1,7 @@
 ﻿using Huelamp.Models;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -23,6 +24,7 @@ namespace Huelamp
     /// </summary>
     public sealed partial class Propertyview : Page
     {
+        MainPage mp;
         Huelampwaardes huelamp;
         public Propertyview()
         {
@@ -37,22 +39,31 @@ namespace Huelamp
 
         private void Send_Click(object sender, RoutedEventArgs e)
         {
+            huelamp.setLamp();
+        }
 
+        private void Back_Click(object sender, RoutedEventArgs e)
+        {
+            Frame frame = Window.Current.Content as Frame;
+            frame.Navigate(typeof(MainPage));
         }
 
         private void Sliderbright_ValueChanged(object sender, RangeBaseValueChangedEventArgs e)
         {
-
+            huelamp.brightness = e.NewValue;
+            Debug.WriteLine(huelamp.id + "edited");
         }
 
         private void Slidersat_ValueChanged(object sender, RangeBaseValueChangedEventArgs e)
         {
-
+            huelamp.saturation = e.NewValue;
+            Debug.WriteLine(huelamp.id + "edited");
         }
 
         private void Sliderhue_ValueChanged(object sender, RangeBaseValueChangedEventArgs e)
         {
-
+            huelamp.hue = e.NewValue;
+            Debug.WriteLine(huelamp.id + "edited");
         }
     }
 }
