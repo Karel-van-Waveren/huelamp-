@@ -22,13 +22,13 @@
     <AppXManifest Include="C:\Users\Karel\Source\Repos\huelamp-\Huelamp\Huelamp\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-01-07T20:05:55.909</Modified>
+      <Modified>2016-01-07T21:18:06.991</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Karel\Source\Repos\huelamp-\Huelamp\Huelamp\bin\x86\Debug\Huelamp.exe">
       <PackagePath>entrypoint\Huelamp.exe</PackagePath>
-      <Modified>2016-01-07T20:05:55.496</Modified>
+      <Modified>2016-01-07T21:18:06.579</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Karel\.nuget\packages\Microsoft.ApplicationInsights\1.0.0\lib\portable-win81+wpa81\Microsoft.ApplicationInsights.dll">
       <PackagePath>Microsoft.ApplicationInsights.dll</PackagePath>
@@ -502,7 +502,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Karel\Source\Repos\huelamp-\Huelamp\Huelamp\bin\x86\Debug\Huelamp.xr.xml">
       <PackagePath>Huelamp.xr.xml</PackagePath>
-      <Modified>2016-01-07T20:05:55.390</Modified>
+      <Modified>2016-01-07T21:14:49.198</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -510,11 +510,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Karel\Source\Repos\huelamp-\Huelamp\Huelamp\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2016-01-07T20:05:55.813</Modified>
+      <Modified>2016-01-07T21:18:06.896</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Karel\Source\Repos\huelamp-\Huelamp\Huelamp\bin\x86\Debug\Core\Huelamp.exe">
       <PackagePath>Huelamp.exe</PackagePath>
-      <Modified>2016-01-07T20:05:55.908</Modified>
+      <Modified>2016-01-07T21:18:06.990</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

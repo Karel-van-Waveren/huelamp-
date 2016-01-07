@@ -132,17 +132,23 @@ namespace Huelamp.Huelamp_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[4];
+            _typeNameTable = new string[7];
             _typeNameTable[0] = "Huelamp.MainPage";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
             _typeNameTable[3] = "Huelamp.Propertyview";
+            _typeNameTable[4] = "Windows.UI.Color";
+            _typeNameTable[5] = "System.ValueType";
+            _typeNameTable[6] = "Object";
 
-            _typeTable = new global::System.Type[4];
+            _typeTable = new global::System.Type[7];
             _typeTable[0] = typeof(global::Huelamp.MainPage);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
             _typeTable[3] = typeof(global::Huelamp.Propertyview);
+            _typeTable[4] = typeof(global::Windows.UI.Color);
+            _typeTable[5] = typeof(global::System.ValueType);
+            _typeTable[6] = typeof(global::System.Object);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -208,19 +214,55 @@ namespace Huelamp.Huelamp_XamlTypeInfo
             case 3:   //  Huelamp.Propertyview
                 userType = new global::Huelamp.Huelamp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
                 userType.Activator = Activate_3_Propertyview;
+                userType.AddMemberName("kleur");
                 userType.SetIsLocalType();
                 xamlType = userType;
+                break;
+
+            case 4:   //  Windows.UI.Color
+                userType = new global::Huelamp.Huelamp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 5:   //  System.ValueType
+                userType = new global::Huelamp.Huelamp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                xamlType = userType;
+                break;
+
+            case 6:   //  Object
+                xamlType = new global::Huelamp.Huelamp_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
             }
             return xamlType;
         }
 
 
+        private object get_0_Propertyview_kleur(object instance)
+        {
+            var that = (global::Huelamp.Propertyview)instance;
+            return that.kleur;
+        }
+        private void set_0_Propertyview_kleur(object instance, object Value)
+        {
+            var that = (global::Huelamp.Propertyview)instance;
+            that.kleur = (global::Windows.UI.Color)Value;
+        }
 
         private global::Windows.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
         {
             global::Huelamp.Huelamp_XamlTypeInfo.XamlMember xamlMember = null;
-            // No Local Properties
+            global::Huelamp.Huelamp_XamlTypeInfo.XamlUserType userType;
+
+            switch (longMemberName)
+            {
+            case "Huelamp.Propertyview.kleur":
+                userType = (global::Huelamp.Huelamp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Huelamp.Propertyview");
+                xamlMember = new global::Huelamp.Huelamp_XamlTypeInfo.XamlMember(this, "kleur", "Windows.UI.Color");
+                xamlMember.Getter = get_0_Propertyview_kleur;
+                xamlMember.Setter = set_0_Propertyview_kleur;
+                break;
+            }
             return xamlMember;
         }
     }

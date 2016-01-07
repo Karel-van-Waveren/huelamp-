@@ -27,6 +27,7 @@ namespace Huelamp
         public static ApplicationDataContainer LOCAL_SETTINGS = APP_DATA.LocalSettings;
         public Huelampmanager hlManger;
         NetworkController nc;
+        int i = 0;
 
         public MainPage()
         {

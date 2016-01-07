@@ -1,18 +1,12 @@
 ﻿using Huelamp.Models;
-using System;
-using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
+using System.Runtime.CompilerServices;
+using Windows.UI;
+using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
@@ -24,11 +18,18 @@ namespace Huelamp
     /// </summary>
     public sealed partial class Propertyview : Page
     {
-        MainPage mp;
+        public Color kleur { get; set; }
         Huelampwaardes huelamp;
+
         public Propertyview()
         {
             this.InitializeComponent();
+            SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
+            SystemNavigationManager.GetForCurrentView().BackRequested += (s, e) =>
+            {
+                Frame frame = Window.Current.Content as Frame;
+                frame.Navigate(typeof(MainPage));
+            };
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -42,28 +43,31 @@ namespace Huelamp
             huelamp.setLamp();
         }
 
-        private void Back_Click(object sender, RoutedEventArgs e)
-        {
-            Frame frame = Window.Current.Content as Frame;
-            frame.Navigate(typeof(MainPage));
-        }
-
         private void Sliderbright_ValueChanged(object sender, RangeBaseValueChangedEventArgs e)
         {
             huelamp.brightness = e.NewValue;
-            Debug.WriteLine(huelamp.id + "edited");
+            update();
         }
 
         private void Slidersat_ValueChanged(object sender, RangeBaseValueChangedEventArgs e)
         {
             huelamp.saturation = e.NewValue;
-            Debug.WriteLine(huelamp.id + "edited");
+            update();
         }
 
         private void Sliderhue_ValueChanged(object sender, RangeBaseValueChangedEventArgs e)
         {
             huelamp.hue = e.NewValue;
-            Debug.WriteLine(huelamp.id + "edited");
+            update();
         }
+
+        void update()
+        {
+            huelamp.setLamp();
+            kleur = huelamp.FillRectangle();
+            color1.Color = kleur;
+            color2.Color = kleur;
+        }
+
     }
 }
