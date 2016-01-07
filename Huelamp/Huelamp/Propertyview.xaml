@@ -20,7 +20,7 @@
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <TextBlock Text="On" Margin="0,15,0,0"/>
-        <ToggleSwitch IsOn="{x:Bind huelamp.on}" Grid.Column="1"/>
+        <ToggleSwitch x:Name="LampToggle" IsOn="True" Toggled="LampToggle_Toggled" Grid.Column="1"/>
         <TextBlock Text="Hue" Margin="0,15,0,0" Grid.Row="2"/>
         <Slider x:Name="Sliderhue" ValueChanged="Sliderhue_ValueChanged" Maximum="65535" Value="{x:Bind huelamp.hue}" Grid.Row="1" Grid.Column="1"/>
         <TextBlock Text="Saturation" Margin="0,15,0,0" Grid.Row="1"/>

@@ -60,11 +60,12 @@ namespace Huelamp.Controllers
         public async void setLamp(Huelampwaardes lamp)
         {
             string id = lamp.id.ToString();
+            string on = lamp.on.ToString();
             string bri = lamp.brightness.ToString();
             string hue = lamp.hue.ToString();
             string sat = lamp.saturation.ToString();
 
-            string data = "{\"bri\": " + bri + ", \"hue\": " + hue + ", \"sat\": " + sat + "  }";
+            string data = "{\"bri\": " + bri + ", \"hue\": " + hue + ", \"sat\": " + sat + ", \"on\": " + on + "  }";
             await PutCommand("api/" + usercode + "/lights/" + id + "/state", data);
         }
 
