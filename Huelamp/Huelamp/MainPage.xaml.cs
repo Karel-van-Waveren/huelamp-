@@ -23,18 +23,13 @@ namespace Huelamp
     public sealed partial class MainPage : Page
     {
         private ObservableCollection<Huelampwaardes> huelampen;
-        public static ApplicationData APP_DATA = ApplicationData.Current;
-        public static ApplicationDataContainer LOCAL_SETTINGS = APP_DATA.LocalSettings;
         public Huelampmanager hlManger;
-        NetworkController nc;
 
         public MainPage()
         {
             this.InitializeComponent();
             this.DataContext = new Huelampwaardes();
             hlManger = new Huelampmanager();
-            fillSettingBoxes();
-            nc = new NetworkController(this);
             huelampen = hlManger.GetHuelampen();
         }
 
@@ -65,57 +60,7 @@ namespace Huelamp
         }
 
         // methodes voor alle settings
-        public static void SetSettings(string ip, int port, string username)
-        {
-            MainPage.LOCAL_SETTINGS.Values["ip"] = ip;
-            MainPage.LOCAL_SETTINGS.Values["port"] = port;
-            MainPage.LOCAL_SETTINGS.Values["user"] = username;
-        }
-
-        public static void RetrieveSettings(out string ip, out int port, out string username)
-        {
-            string tempIP = MainPage.LOCAL_SETTINGS.Values["ip"] as string;
-            int tempPort = Convert.ToInt32(MainPage.LOCAL_SETTINGS.Values["port"]);
-            string tempUsername = MainPage.LOCAL_SETTINGS.Values["user"] as string;
-
-            if (string.IsNullOrEmpty(tempIP))
-                tempIP = "localhost";
-            if (tempPort == 0)
-                tempPort = 8000;
-            if (string.IsNullOrEmpty(tempUsername))
-                tempUsername = "MenK Hue";
-
-            ip = tempIP;
-            port = tempPort;
-            username = tempUsername;
-        }
-
-        public void fillSettingBoxes()
-        {
-            string ip;
-            int port;
-            string username;
-            RetrieveSettings(out ip, out port, out username);
-            IpBox.Text = ip;
-            PortBox.Text = port + "";
-            UsernameBox.Text = username;
-        }
-        // button methodes
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            if (!string.IsNullOrEmpty(IpBox.Text) && !string.IsNullOrEmpty(PortBox.Text) && !string.IsNullOrEmpty(UsernameBox.Text))
-            {
-                SetSettings(IpBox.Text, Convert.ToInt32(PortBox.Text), UsernameBox.Text);
-                nc.initializeNC();
-                huelampen = hlManger.GetHuelampen();
-                SplitView.IsPaneOpen = !SplitView.IsPaneOpen;
-            }
-            else
-            {
-                //display error that user hasn't filled all the boxes
-
-            }
-        }
+      
         private void LightListView_OnItemClick(object sender, ItemClickEventArgs e)
         {
             Huelampwaardes huelamp = e.ClickedItem as Huelampwaardes;
@@ -125,12 +70,12 @@ namespace Huelamp
 
         private void AppBarButton_Click(object sender, RoutedEventArgs e)
         {
-            SplitView.IsPaneOpen = !SplitView.IsPaneOpen;
+            Frame.Navigate(typeof(SettingsPage));
         }
 
         private void AppBarButton_Click_1(object sender, RoutedEventArgs e)
         {
-            SplitView.IsPaneOpen = !SplitView.IsPaneOpen;
+
         }
         public void loadLamps()
         {

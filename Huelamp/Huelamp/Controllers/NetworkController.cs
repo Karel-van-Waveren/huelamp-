@@ -17,6 +17,7 @@ namespace Huelamp.Controllers
         private string username;
         private string usercode;
         private MainPage mp;
+        private SettingsPage settingsPage;
 
         public NetworkController(MainPage mp)
         {
@@ -30,11 +31,9 @@ namespace Huelamp.Controllers
             this.mp = mp;
         }
 
-        public void initializeNC()
+        public NetworkController(SettingsPage settingsPage)
         {
-            MainPage.RetrieveSettings(out ip, out port, out username);
-            getUsername();
-            //Debug.WriteLine("usercode: " + usercode);
+            this.settingsPage = settingsPage;
         }
 
         private async void getUsername()

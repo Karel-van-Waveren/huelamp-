@@ -1092,3 +1092,7 @@ C:\Users\Karel\Source\Repos\huelamp-\Huelamp\Huelamp\obj\x86\Debug\Propertyview.
 C:\Users\Karel\Source\Repos\huelamp-\Huelamp\Huelamp\obj\x86\Debug\Propertyview.g.cs
 C:\Users\Karel\Source\Repos\huelamp-\Huelamp\Huelamp\obj\x86\Debug\Propertyview.xaml
 C:\Users\Karel\Source\Repos\huelamp-\Huelamp\Huelamp\obj\x86\Debug\Propertyview.xbf
+C:\Users\marnix\Documents\GitHub\huelamp-\Huelamp\Huelamp\obj\x86\Debug\SettingsPage.g.i.cs
+C:\Users\marnix\Documents\GitHub\huelamp-\Huelamp\Huelamp\obj\x86\Debug\SettingsPage.g.cs
+C:\Users\marnix\Documents\GitHub\huelamp-\Huelamp\Huelamp\obj\x86\Debug\SettingsPage.xaml
+C:\Users\marnix\Documents\GitHub\huelamp-\Huelamp\Huelamp\obj\x86\Debug\SettingsPage.xbf
