@@ -31,9 +31,16 @@ namespace Huelamp.Controllers
             this.mp = mp;
         }
 
+
         public NetworkController(SettingsPage settingsPage)
         {
             this.settingsPage = settingsPage;
+        }
+        public void initializeNC()
+        {
+            SettingsPage.RetrieveSettings(out ip, out port, out username);
+            getUsername();
+            //Debug.WriteLine("usercode: " + usercode);
         }
 
         private async void getUsername()
@@ -59,12 +66,19 @@ namespace Huelamp.Controllers
         public async void setLamp(Huelampwaardes lamp)
         {
             string id = lamp.id.ToString();
-            string on = lamp.on.ToString();
             string bri = lamp.brightness.ToString();
             string hue = lamp.hue.ToString();
             string sat = lamp.saturation.ToString();
 
-            string data = "{\"bri\": " + bri + ", \"hue\": " + hue + ", \"sat\": " + sat + ", \"on\": " + on + "  }";
+            string data = "{\"bri\": " + bri + ", \"hue\": " + hue + ", \"sat\": " + sat + "  }";
+            await PutCommand("api/" + usercode + "/lights/" + id + "/state", data);
+        }
+
+        public async void onoffLamp(Huelampwaardes lamp)
+        {
+            string id = lamp.id.ToString();
+            string on = lamp.on.ToString();
+            string data = "{\"on\": " + on + "  }";
             await PutCommand("api/" + usercode + "/lights/" + id + "/state", data);
         }
 

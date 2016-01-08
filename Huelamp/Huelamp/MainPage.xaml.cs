@@ -17,6 +17,7 @@ using Windows.Storage;
 using Huelamp.Controllers;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
+using Windows.UI.Core;
 
 namespace Huelamp
 {
@@ -24,13 +25,22 @@ namespace Huelamp
     {
         private ObservableCollection<Huelampwaardes> huelampen;
         public Huelampmanager hlManger;
+        NetworkController nc;
 
         public MainPage()
         {
             this.InitializeComponent();
+            SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
+            SystemNavigationManager.GetForCurrentView().BackRequested += (s, e) =>
+            {
+                Frame frame = Window.Current.Content as Frame;
+                frame.Navigate(typeof(SettingsPage));
+            };
             this.DataContext = new Huelampwaardes();
             hlManger = new Huelampmanager();
             huelampen = hlManger.GetHuelampen();
+            nc = new NetworkController(this);
+            nc.initializeNC();
         }
 
         private List<FrameworkElement> GetChildren(DependencyObject parent)

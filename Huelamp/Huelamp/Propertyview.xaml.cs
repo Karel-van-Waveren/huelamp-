@@ -19,8 +19,8 @@ namespace Huelamp
     public sealed partial class Propertyview : Page
     {
         public Color kleur { get; set; }
+        bool off;
         Huelampwaardes huelamp;
-        int i = 0;
 
         public Propertyview()
         {
@@ -67,6 +67,8 @@ namespace Huelamp
             if (huelamp != null)
             {
                 huelamp.on = LampToggle.IsOn;
+                off = !LampToggle.IsOn;
+                huelamp.nc.onoffLamp(huelamp);
                 update();
             }
         }
@@ -75,6 +77,8 @@ namespace Huelamp
         {
             huelamp.setLamp();
             kleur = huelamp.FillRectangle();
+            if (off)
+                kleur = Color.FromArgb(255, 0, 0, 0);
             color1.Color = kleur;
             color2.Color = kleur;
         }

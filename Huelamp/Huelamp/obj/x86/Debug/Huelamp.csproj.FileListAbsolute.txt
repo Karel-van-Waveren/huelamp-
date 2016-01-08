@@ -1096,3 +1096,8 @@ C:\Users\marnix\Documents\GitHub\huelamp-\Huelamp\Huelamp\obj\x86\Debug\Settings
 C:\Users\marnix\Documents\GitHub\huelamp-\Huelamp\Huelamp\obj\x86\Debug\SettingsPage.g.cs
 C:\Users\marnix\Documents\GitHub\huelamp-\Huelamp\Huelamp\obj\x86\Debug\SettingsPage.xaml
 C:\Users\marnix\Documents\GitHub\huelamp-\Huelamp\Huelamp\obj\x86\Debug\SettingsPage.xbf
+C:\Users\Karel\Source\Repos\huelamp-\Huelamp\Huelamp\obj\x86\Debug\SettingsPage.g.i.cs
+C:\Users\Karel\Source\Repos\huelamp-\Huelamp\Huelamp\obj\x86\Debug\SettingsPage.g.cs
+C:\Users\Karel\Source\Repos\huelamp-\Huelamp\Huelamp\obj\x86\Debug\SettingsPage.xaml
+C:\Users\Karel\Source\Repos\huelamp-\Huelamp\Huelamp\obj\x86\Debug\SettingsPage.xbf
+C:\Users\Karel\Source\Repos\huelamp-\Huelamp\Huelamp\bin\x86\Debug\SettingsPage.xbf

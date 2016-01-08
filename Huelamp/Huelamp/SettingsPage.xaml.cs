@@ -30,13 +30,13 @@ namespace Huelamp
         public static ApplicationDataContainer LOCAL_SETTINGS = APP_DATA.LocalSettings;
         private ObservableCollection<Huelampwaardes> huelampen;
         public Huelampmanager hlManger;
-        NetworkController nc;
+
 
         public SettingsPage()
         {
             this.InitializeComponent();
             fillSettingBoxes();
-            nc = new NetworkController(this);
+    
         }
 
         public static void SetSettings(string ip, int port, string username)
@@ -64,13 +64,6 @@ namespace Huelamp
             username = tempUsername;
         }
 
-        public void initializeNC()
-        {
-            SettingsPage.RetrieveSettings(out ip, out port, out username);
-            getUsername();
-            //Debug.WriteLine("usercode: " + usercode);
-        }
-
         public void fillSettingBoxes()
         {
             string ip;
@@ -87,8 +80,10 @@ namespace Huelamp
             if (!string.IsNullOrEmpty(IpBox.Text) && !string.IsNullOrEmpty(PortBox.Text) && !string.IsNullOrEmpty(UsernameBox.Text))
             {
                 SetSettings(IpBox.Text, Convert.ToInt32(PortBox.Text), UsernameBox.Text);
-                nc.initializeNC();
-                huelampen = hlManger.GetHuelampen();
+              
+
+                Frame frame = Window.Current.Content as Frame;
+                frame.Navigate(typeof(MainPage));
             }
             else
             {
